@@ -28,7 +28,7 @@ resource "google_composer_environment" "cluster_config_composer" {
   name   = var.composer_name
   region = var.region
   provider = google-beta
-  # labels = ""
+  labels = {env = var.work_environ}
 
   storage_config {
       bucket  = google_storage_bucket.create_bucket.name
@@ -99,16 +99,3 @@ resource "google_composer_environment" "cluster_config_composer" {
   }
 
 }
-
-# resource "google_compute_network" "test" {
-#   name                    = "composer-test-network3"
-#   auto_create_subnetworks = false
-# }
-
-# resource "google_compute_subnetwork" "test" {
-#   name          = "composer-test-subnetwork"
-#   ip_cidr_range = "10.2.0.0/16"
-#   region        = var.region
-#   network       = google_compute_network.test.id
-# }
-
