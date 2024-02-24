@@ -29,7 +29,7 @@ variable "image_version_composer" {
 variable "composer_name" {
   type        = string
   description = "Nome da instância do composer"
-  default     = "eneva-composer-comn"
+  default     = ""
   nullable    = false
 }
 
